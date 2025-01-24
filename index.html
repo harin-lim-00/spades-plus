@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Define your URLs
+            const appleLink = "https://apps.apple.com/us/app/spades-plus-card-game/id834185106";
+            const androidLink = "https://play.google.com/store/apps/details?id=net.peakgames.mobile.spades.android&hl=en_US&pli=1";
+
+            // Check the user agent
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/iPhone|iPad|iPod|Macintosh/i.test(userAgent)) {
+                window.location.href = appleLink;
+            } else if (/Android/i.test(userAgent)) {
+                window.location.href = androidLink;
+            } else {
+                // Default behavior if the device is neither Apple nor Android
+                alert("Unsupported device. Please visit on a mobile device.");
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>Redirecting you to the appropriate page...</p>
+</body>
+</html>
